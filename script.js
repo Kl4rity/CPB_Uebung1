@@ -14,6 +14,7 @@ var viewHandler = {
             lsState.push(new Contact(name, number));
             viewHandler.refreshTable();
             viewHandler.clearInputFields();
+            storageHandler.writeData();
         });
         window.addEventListener("deviceorientation", viewHandler.refreshTable, true);
     }
@@ -50,6 +51,18 @@ var viewHandler = {
     }
 }
 
+var storageHandler = {
+    readData : () => {
+        if(!localStorage.getItem('phoneBook')){
+            localStorage.setItem('phoneBook', "{}");
+        }
+        lsState = JSON.parse(localStorage.getItem('phoneBook'));
+    }
+    , writeData : () => {
+        localStorage.setItem('phoneBook', JSON.stringify(lsState));
+    }
+}
+
 class Contact {
     constructor(strName, strPhoneNumber){
         this.name = strName;
@@ -60,9 +73,7 @@ class Contact {
 $(document).ready(()=>{
     viewHandler.initEventListeners();
 
-    lsState.push(new Contact("Clemens Stift", "+4364123456789"));
-    lsState.push(new Contact("Anna Weiter", "+4969945487625"));
-    lsState.push(new Contact("Can Aktugan", "+3948489275"));
+    storageHandler.readData();
 
     viewHandler.refreshTable();
 });
