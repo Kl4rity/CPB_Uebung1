@@ -5,6 +5,12 @@ var viewHandler = {
         $("#addEntryToPhoneBook").click(() => {
             var name = $("#addPhoneNumberName").val();
             var number = $("#addPhoneNumberNumber").val();
+
+            if (!name || !number){
+                alert("Please add data before adding a new entry.");
+                return;
+            }
+
             lsState.push(new Contact(name, number));
             viewHandler.refreshTable();
             viewHandler.clearInputFields();
