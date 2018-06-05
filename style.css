@@ -21,6 +21,8 @@ body {
     justify-content: center;
     align-items: normal;
     color: white;
+    box-shadow: 1px 1px 1px black;
+
 }
 
 #header h1{
@@ -72,6 +74,8 @@ body {
     right: 0px;
     padding: 10px;
     background-color: rgb(139, 0, 0);
+    box-shadow: -1px 0px 1px black;
+
 }
 
 #footer {
@@ -83,7 +87,7 @@ body {
     width: 40%;
     margin: 0px;
     border:none;
-    padding: 3px;
+    padding: 5px;
     margin-right: 2%;
     box-shadow: 2px 2px 1px black;
 
