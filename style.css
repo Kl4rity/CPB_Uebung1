@@ -15,7 +15,6 @@ body {
 
 #header {
     background-color: rgb(139, 0, 0, 0.9);
-    height: 6vh;
     min-height: 40px;
     display: flex;
     justify-content: center;
@@ -26,12 +25,12 @@ body {
 }
 
 #header h1{
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #container {
-    padding-top:7vh;
+    padding-top:60px;
     margin:auto;
     background-color: rgb(0, 0, 0, 0.05);
     height: 100vh;
@@ -123,6 +122,10 @@ body {
 
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+.portrait :nth-child(2n) {
+    display: none;
 }
 
 @media (max-width: 800px) {

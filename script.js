@@ -15,16 +15,26 @@ var viewHandler = {
             viewHandler.refreshTable();
             viewHandler.clearInputFields();
         });
+        window.addEventListener("deviceorientation", viewHandler.refreshTable, true);
     }
     , refreshTable : () => {
         $("#phoneBookTable").empty();
-        $("#phoneBookTable").append("<tr> <th class='phoneBookTableHead'>Name</th> <th class='phoneBookTableHead'>Number</th> </tr>");
+        var screenOrientation = window.screen.orientation.type;
+        if(screenOrientation && screenOrientation.includes("portrait")){
+            $("#phoneBookTable").append("<tr class='portrait'> <th class='phoneBookTableHead'>Name</th> <th class='phoneBookTableHead'>Number</th> </tr>");
+        } else {
+            $("#phoneBookTable").append("<tr> <th class='phoneBookTableHead'>Name</th> <th class='phoneBookTableHead'>Number</th> </tr>");
+        }
         lsState.forEach((contact)=>{
             $("#phoneBookTable").append(viewHandler.buildTableRow(contact.name, contact.phoneNumber));
         });
     }
     , buildTableRow : (strName, strPhoneNumber) => {
         var addTR = document.createElement('tr');
+        var screenOrientation = window.screen.orientation.type;
+        if(screenOrientation && screenOrientation.includes("portrait")){
+            addTR.classList += "portrait";
+        }
         var nameCell = document.createElement('td');
         nameCell.innerHTML = strName;
         addTR.appendChild(nameCell);
