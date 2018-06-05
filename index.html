@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <nav>PhoneBook</nav>
+    <div id="pageWrapper">
+        <div id="header">
+            <h1>PhoneBook</h1>
+        </div>
+        <div id="container">
+                <table id="phoneBookTable">
+                        <tr>
+                            <th class="phoneBookTableHead">Name</th>
+                            <th class="phoneBookTableHead">Number</th>
+                        </tr>
+                        <tr>
+                            <td>Clemens Stift</td>
+                            <td>+4369919086225</td>
+                        </tr>
+                        <tr>
+                            <td>Clemens Stift</td>
+                            <td>+4369919086225</td>
+                        </tr>
+                        <tr>
+                            <td>Clemens Stift</td>
+                            <td>+4369919086225</td>
+                        </tr>
+                </table>
+        </div>
+        <div id="footerContainer">
+            <div id="footer">
+                <input type="text" id="addPhoneNumberName" placeholder="Name">
+                <input type="text"id="addPhoneNumberNumber" placeholder="Phone Number">
+                <button id="addEntryToPhoneBook">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
