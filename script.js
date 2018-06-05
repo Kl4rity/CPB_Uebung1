@@ -18,6 +18,7 @@ var viewHandler = {
     }
     , refreshTable : () => {
         $("#phoneBookTable").empty();
+        $("#phoneBookTable").append("<tr> <th class='phoneBookTableHead'>Name</th> <th class='phoneBookTableHead'>Number</th> </tr>");
         lsState.forEach((contact)=>{
             $("#phoneBookTable").append(viewHandler.buildTableRow(contact.name, contact.phoneNumber));
         });
